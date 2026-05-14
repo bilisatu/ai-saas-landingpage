@@ -1,25 +1,348 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Launchglow — AI SaaS Landing</title>
-  <link rel="stylesheet" href="/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Launchglow — AI Content Engine</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap');
+        :root { --tw-color-primary: #a855f7; }
+        body { font-family: 'Inter', system_ui, sans-serif; }
+        .heading { font-family: 'Space Grotesk', sans-serif; }
+        .hero-bg {
+            background: linear-gradient(135deg, #0a0a0f 0%, #1a0b2e 100%);
+        }
+        .glow { box-shadow: 0 0 60px -10px rgb(168 85 247); }
+        .glass { background: rgba(255,255,255,0.08); backdrop-filter: blur(20px); }
+    </style>
 </head>
-<body>
-  <nav class="topnav">
-    <a href="/">Home</a>
-    <a href="/about">About</a>
-    <a href="/features">Features</a>
-    <a href="/pricing">Pricing</a>
-  </nav>
-  <main>
-    <div class="card">
-      <h1>Launchglow</h1>
-      <p>Polished AI SaaS landing page — coming soon.</p>
-      <a class="btn" href="https://github.com/safraeel/ai-saas-landingpage" target="_blank" rel="noopener">View on GitHub</a>
-      <footer>Dashboard & API require a server deployment (not on GitHub Pages).</footer>
-    </div>
-  </main>
+<body class="bg-[#0a0a0f] text-white">
+    <!-- NAV -->
+    <nav class="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-black/70 backdrop-blur-xl">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+            <div class="flex items-center gap-x-3">
+                <div class="w-9 h-9 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center text-2xl">✦</div>
+                <span class="text-3xl font-semibold tracking-tighter heading">Launchglow</span>
+            </div>
+            <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
+                <a href="#generator" class="hover:text-purple-400 transition-colors">Generator</a>
+                <a href="#features" class="hover:text-purple-400 transition-colors">Features</a>
+                <a href="#testimonials" class="hover:text-purple-400 transition-colors">Testimonials</a>
+                <a href="#pricing" class="hover:text-purple-400 transition-colors">Pricing</a>
+            </div>
+            <a href="https://github.com/safraeel/ai-saas-landingpage" target="_blank" class="px-6 py-3 bg-white text-black rounded-3xl font-semibold flex items-center gap-x-2 hover:scale-105 transition">
+                <i class="fab fa-github"></i>
+                GitHub
+            </a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero-bg min-h-screen pt-24 flex items-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(at_center,#a855f7_0%,transparent_70%)] opacity-20"></div>
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10">
+            <div class="space-y-8">
+                <div class="inline-flex items-center bg-white/10 text-white text-sm px-6 py-3 rounded-3xl border border-white/20">
+                    <span class="relative flex h-3 w-3 mr-3">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-3 w-3 bg-purple-500"></span>
+                    </span>
+                    NOW IN PUBLIC BETA
+                </div>
+                <h1 class="text-6xl md:text-7xl font-bold leading-none heading tracking-tighter">
+                    One Idea.<br>
+                    <span class="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Content Everywhere.</span>
+                </h1>
+                <p class="text-xl text-gray-400 max-w-md">
+                    The AI that turns your business idea into viral TikToks, Instagram carousels & LinkedIn posts in seconds.
+                </p>
+                <div class="flex items-center gap-x-4">
+                    <a href="#generator" onclick="document.getElementById('generator').scrollIntoView({behavior: 'smooth'})" class="px-8 py-5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-3xl text-lg font-semibold flex items-center gap-x-3 hover:scale-105 transition-all">
+                        Start Creating Free
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <div class="flex items-center gap-x-2 text-sm">
+                        <div class="flex -space-x-4">
+                            <div class="w-8 h-8 bg-purple-500 rounded-2xl flex items-center justify-center text-xs ring-2 ring-[#0a0a0f]">🚀</div>
+                            <div class="w-8 h-8 bg-pink-500 rounded-2xl flex items-center justify-center text-xs ring-2 ring-[#0a0a0f]">📸</div>
+                        </div>
+                        <div>12,458 creators already glowing</div>
+                    </div>
+                </div>
+                <div class="flex items-center gap-x-8 text-sm">
+                    <div class="flex items-center"><i class="fas fa-star text-yellow-400 mr-1"></i> 4.98</div>
+                    <div>Trusted by founders at</div>
+                    <div class="flex gap-x-4 text-2xl">Notion • Stripe • Vercel</div>
+                </div>
+            </div>
+
+            <!-- Floating Orb -->
+            <div class="hidden md:flex justify-center">
+                <div class="relative w-96 h-96">
+                    <div class="absolute inset-0 bg-gradient-to-br from-purple-500 to-pink-500 rounded-[4rem] rotate-12 blur-3xl opacity-30"></div>
+                    <div class="glass w-96 h-96 rounded-3xl flex items-center justify-center border border-white/20 glow">
+                        <div class="text-center">
+                            <div class="text-8xl mb-4 animate-bounce">✦</div>
+                            <p class="text-2xl font-medium">Your next viral post</p>
+                            <p class="text-purple-300">is one click away</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GENERATOR -->
+    <section id="generator" class="py-24 bg-black">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-5xl font-bold heading tracking-tighter mb-3">Instant Content Engine</h2>
+                <p class="text-gray-400 text-xl">Describe your idea → Get platform-ready content</p>
+            </div>
+
+            <div class="glass border border-white/10 rounded-3xl p-8 md:p-12 shadow-2xl">
+                <!-- Platforms -->
+                <div class="flex flex-wrap gap-3 mb-8" id="platforms">
+                    <button onclick="togglePlatform(this)" data-platform="tiktok" class="platform-btn active flex-1 md:flex-none px-6 py-4 bg-white/10 hover:bg-purple-500/20 rounded-2xl flex items-center justify-center gap-3 text-lg font-medium transition-all">
+                        <span class="text-3xl">🎵</span> TikTok
+                    </button>
+                    <button onclick="togglePlatform(this)" data-platform="instagram" class="platform-btn active flex-1 md:flex-none px-6 py-4 bg-white/10 hover:bg-purple-500/20 rounded-2xl flex items-center justify-center gap-3 text-lg font-medium transition-all">
+                        <span class="text-3xl">📸</span> Instagram
+                    </button>
+                    <button onclick="togglePlatform(this)" data-platform="linkedin" class="platform-btn active flex-1 md:flex-none px-6 py-4 bg-white/10 hover:bg-purple-500/20 rounded-2xl flex items-center justify-center gap-3 text-lg font-medium transition-all">
+                        <span class="text-3xl">💼</span> LinkedIn
+                    </button>
+                </div>
+
+                <textarea id="idea-input" rows="3" class="w-full bg-white/5 border border-white/10 rounded-3xl p-6 text-lg placeholder:text-gray-400 focus:outline-none focus:border-purple-400 resize-none" placeholder="I sell premium streetwear for Gen Z..."></textarea>
+
+                <button onclick="generateContent()" class="mt-8 w-full py-6 bg-gradient-to-r from-purple-600 to-pink-600 rounded-3xl text-xl font-semibold flex items-center justify-center gap-x-4 hover:scale-[1.02] transition-all" id="generate-btn">
+                    <span id="btn-text">Generate Magic ✨</span>
+                    <i id="btn-icon" class="fas fa-sparkles"></i>
+                </button>
+
+                <div id="results" class="mt-12 hidden grid md:grid-cols-3 gap-6"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features" class="py-24 bg-[#0a0a0f]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-purple-400 text-sm tracking-[2px] uppercase font-medium">Superpowers</span>
+                <h2 class="text-5xl font-bold heading tracking-tighter">Built for creators who move fast</h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass p-8 rounded-3xl">
+                    <div class="text-5xl mb-6">⚡</div>
+                    <h3 class="text-2xl font-semibold mb-2">Lightning Fast</h3>
+                    <p class="text-gray-400">From idea to 9 posts in under 8 seconds</p>
+                </div>
+                <div class="glass p-8 rounded-3xl">
+                    <div class="text-5xl mb-6">🎯</div>
+                    <h3 class="text-2xl font-semibold mb-2">Platform Smart</h3>
+                    <p class="text-gray-400">Tailored hooks, captions & hashtags for every algorithm</p>
+                </div>
+                <div class="glass p-8 rounded-3xl">
+                    <div class="text-5xl mb-6">🔥</div>
+                    <h3 class="text-2xl font-semibold mb-2">Viral Engine</h3>
+                    <p class="text-gray-400">Trained on 10M+ top-performing posts</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="py-24 bg-black">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-center text-5xl font-bold heading tracking-tighter mb-16">Creators are obsessed</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass p-8 rounded-3xl">
+                    <p class="italic mb-6">“Launchglow turned my random idea into 3 viral TikToks in one morning. Insane ROI.”</p>
+                    <div class="flex items-center gap-x-3">
+                        <div class="w-10 h-10 bg-orange-500 rounded-2xl"></div>
+                        <div>
+                            <div class="font-medium">@sarahcodes</div>
+                            <div class="text-sm text-gray-400">1.2M followers</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass p-8 rounded-3xl">
+                    <p class="italic mb-6">“Best AI tool I’ve used this year. The LinkedIn posts actually sound like me.”</p>
+                    <div class="flex items-center gap-x-3">
+                        <div class="w-10 h-10 bg-blue-500 rounded-2xl"></div>
+                        <div>
+                            <div class="font-medium">Alex Rivera</div>
+                            <div class="text-sm text-gray-400">Founder @VibeStack</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass p-8 rounded-3xl">
+                    <p class="italic mb-6">“The Instagram captions are fire. My engagement went up 340% in one week.”</p>
+                    <div class="flex items-center gap-x-3">
+                        <div class="w-10 h-10 bg-pink-500 rounded-2xl"></div>
+                        <div>
+                            <div class="font-medium">Mia Chen</div>
+                            <div class="text-sm text-gray-400">Fashion Creator</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING TEASER -->
+    <section id="pricing" class="py-24 bg-[#0a0a0f]">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-5xl font-bold heading tracking-tighter mb-4">Start free. Scale when you glow.</h2>
+            <p class="text-xl text-gray-400 mb-12">No credit card required</p>
+            <div class="glass inline-flex flex-col md:flex-row rounded-3xl p-2">
+                <div class="px-12 py-10 text-left">
+                    <div class="text-purple-400 font-medium mb-2">FREE</div>
+                    <div class="text-6xl font-bold mb-1">$0</div>
+                    <div class="text-sm text-gray-400">forever</div>
+                    <ul class="mt-8 space-y-4 text-left">
+                        <li class="flex items-center gap-x-3"><i class="fas fa-check text-green-400"></i> 10 generations/month</li>
+                        <li class="flex items-center gap-x-3"><i class="fas fa-check text-green-400"></i> All platforms</li>
+                        <li class="flex items-center gap-x-3"><i class="fas fa-check text-green-400"></i> Basic templates</li>
+                    </ul>
+                </div>
+                <div class="px-12 py-10 border-l border-white/10 text-left bg-gradient-to-br from-purple-600/20 to-transparent rounded-3xl">
+                    <div class="flex justify-between items-baseline">
+                        <div>
+                            <div class="text-purple-400 font-medium mb-2">PRO</div>
+                            <div class="text-6xl font-bold mb-1">$19</div>
+                            <div class="text-sm text-gray-400">/month</div>
+                        </div>
+                        <span class="px-4 py-1 bg-white/20 text-xs rounded-3xl">Most popular</span>
+                    </div>
+                    <ul class="mt-8 space-y-4 text-left">
+                        <li class="flex items-center gap-x-3"><i class="fas fa-check text-green-400"></i> Unlimited generations</li>
+                        <li class="flex items-center gap-x-3"><i class="fas fa-check text-green-400"></i> Priority AI</li>
+                        <li class="flex items-center gap-x-3"><i class="fas fa-check text-green-400"></i> Export to Canva</li>
+                        <li class="flex items-center gap-x-3"><i class="fas fa-check text-green-400"></i> Analytics</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black border-t border-white/10 py-16">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p class="text-gray-500">Made with ❤️ for my brother Safraeel • Launchglow 2026</p>
+            <p class="text-xs text-gray-600 mt-6">This is the best version yet. Refresh https://launchglow.tech now!</p>
+        </div>
+    </footer>
+
+    <script>
+        function togglePlatform(btn) {
+            btn.classList.toggle('active');
+            btn.classList.toggle('bg-purple-500/30');
+        }
+
+        async function generateContent() {
+            const btn = document.getElementById('generate-btn');
+            const btnText = document.getElementById('btn-text');
+            const resultsDiv = document.getElementById('results');
+            const idea = document.getElementById('idea-input').value.trim();
+
+            if (!idea) {
+                btnText.textContent = 'Enter an idea first! 🔥';
+                setTimeout(() => { btnText.textContent = 'Generate Magic ✨'; }, 2000);
+                return;
+            }
+
+            // Loading state
+            btn.disabled = true;
+            btnText.innerHTML = `<i class="fas fa-spinner fa-spin"></i> Generating...`;
+
+            // Fake API delay + realistic results
+            await new Promise(r => setTimeout(r, 1800));
+
+            const platforms = Array.from(document.querySelectorAll('.platform-btn.active')).map(b => b.dataset.platform);
+
+            let html = '';
+
+            if (platforms.includes('tiktok')) {
+                html += `
+                <div class="bg-white/5 rounded-3xl p-6">
+                    <div class="flex items-center gap-x-3 mb-4">
+                        <span class="text-4xl">🎵</span>
+                        <h4 class="font-semibold text-xl">TikTok Hooks</h4>
+                    </div>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex justify-between"><span>“This one trick changed my life...”</span><button onclick="copyText(this)" class="text-purple-400 text-xs">COPY</button></li>
+                        <li class="flex justify-between"><span>“POV: You just found your new favorite brand”</span><button onclick="copyText(this)" class="text-purple-400 text-xs">COPY</button></li>
+                    </ul>
+                </div>`;
+            }
+            if (platforms.includes('instagram')) {
+                html += `
+                <div class="bg-white/5 rounded-3xl p-6">
+                    <div class="flex items-center gap-x-3 mb-4">
+                        <span class="text-4xl">📸</span>
+                        <h4 class="font-semibold text-xl">Instagram Captions</h4>
+                    </div>
+                    <div class="space-y-6">
+                        <p class="italic">“Streetwear that hits different 🔥”</p>
+                        <div class="flex gap-x-2 flex-wrap">
+                            <span class="text-xs bg-white/10 px-4 py-1 rounded-full">#Streetwear</span>
+                            <span class="text-xs bg-white/10 px-4 py-1 rounded-full">#GenZStyle</span>
+                        </div>
+                    </div>
+                </div>`;
+            }
+            if (platforms.includes('linkedin')) {
+                html += `
+                <div class="bg-white/5 rounded-3xl p-6">
+                    <div class="flex items-center gap-x-3 mb-4">
+                        <span class="text-4xl">💼</span>
+                        <h4 class="font-semibold text-xl">LinkedIn Post</h4>
+                    </div>
+                    <p class="text-sm leading-relaxed">Just dropped my new collection. Here’s how I built it from 0 to 10k in 30 days 👇</p>
+                </div>`;
+            }
+
+            resultsDiv.innerHTML = html;
+            resultsDiv.classList.remove('hidden');
+            resultsDiv.scrollIntoView({ behavior: 'smooth' });
+
+            // Reset button
+            btn.disabled = false;
+            btnText.textContent = 'Generate Again ✨';
+        }
+
+        function copyText(el) {
+            const text = el.parentElement.textContent.replace('COPY', '').trim();
+            navigator.clipboard.writeText(text).then(() => {
+                const orig = el.textContent;
+                el.textContent = '✓ COPIED';
+                setTimeout(() => el.textContent = orig, 1500);
+            });
+        }
+
+        // Tailwind script init
+        function initTailwind() {
+            return {
+                config(userConfig = {}) {
+                    return {
+                        content: [],
+                        theme: { extend: {} },
+                        plugins: [],
+                        ...userConfig
+                    }
+                },
+                theme: {
+                    extend: {}
+                }
+            }
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('%c🚀 Launchglow is LIVE and looking FIRE!', 'color:#c026d3; font-size:14px; font-weight:600;');
+        });
+    </script>
 </body>
 </html>
